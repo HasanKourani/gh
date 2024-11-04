@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+</head>
+<style>
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f8ff;
+}
+
+.flower {
+    position: relative;
+    width: 150px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.stem {
+    width: 10px;
+    height: 200px; /* Adjusted stem length */
+    background-color: green;
+    position: absolute;
+    bottom: -50px; /* Move the stem slightly lower */
+    z-index: -1; /* Place stem behind petals */
+}
+
+.petal {
+    width: 40px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    top: -30px; /* Move petals up to align with stem and center */
+    transform-origin: bottom center;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+</style>
+<body>
+    <div class="flower">
+        <div class="stem"></div>
+        <div class="center"></div>
+    </div>
+    <h1>I love you</h1>
+    <script>
+        function createPetals() {
+    const flower = document.querySelector('.flower');
+    for (let i = 0; i < 12; i++) { // 12 petals for a fuller, larger flower
+        const petal = document.createElement('div');
+        petal.classList.add('petal');
+        petal.style.transform = `rotate(${i * 30}deg) scale(0)`; // 30 degrees for 12 evenly spaced petals
+        flower.appendChild(petal);
+    }
+}
+
+function animateFlower() {
+    const petals = document.querySelectorAll('.petal');
+    petals.forEach((petal, index) => {
+        setTimeout(() => {
+            petal.style.opacity = 1;
+            petal.style.transform = `rotate(${index * 30}deg) scale(1)`;
+        }, index * 100); // Delay for each petal to bloom sequentially
+    });
+}
+
+// Create petals and start animation as soon as the page loads
+window.onload = () => {
+    createPetals();
+    animateFlower();
+};
+    </script>
+</body>
+</html>

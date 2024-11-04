@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mystery</title>
+</head>
+<body>
+    <div class="mystery">
+        <p>There's a mystery word you need to type in here!</p>
+        <p>Get that word correct and send me a screenshot of it</p>
+        <p>And you will get a prize!</p>
+        <p>Plus something you can ask me for</p>
+        <p>ANYTHING U WANT, EVER</p>
+        <p>So 2 prizes actually</p>
+        <p>Now, good luck!</p>
+
+        <form action="" id="mysteryForm">
+            <input type="password" name="mystery" id="mystery" class="pass">
+            <button type="submit" class="hint">Confirm</button>
+        </form>
+    </div>
+
+    <script>
+        function verifyPassword(event) {
+        const pass = "panties"
+        const inputPass = document.getElementById("mystery").value;
+
+        if(pass === inputPass) {
+            alert("RIGHTTTTTT! NOW SEND A SCREENSHOT ON SNAPCHAT AND GET YOUR PRIZE ;)");
+        } else {
+            alert("BEEEEEEP WRONG.");
+            event.preventDefault();
+        }   
+    }
+    
+    document.getElementById("mysteryForm").addEventListener("submit", verifyPassword);
+    </script>
+</body>
+</html>

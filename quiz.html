@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="quiz">
+        <form action="/game.html" id="registrationForm">
+            <label for="pass">Guess The Password</label>
+            <input type="password" name="pass" id="pass" class="pass" placeholder="Enter Password">
+            <button type="submit" class="hint">Confirm</button>
+        </form>
+        <div>
+            <button onclick=showHint1() class="hint">Hint 1:</button>
+            <p id="hint1" class="hidden hint">Our secret</p>
+            <button onclick=showHint2() class="hint">Hint 2:</button>
+            <p id="hint2" class="hidden hint">Japanese</p>
+            <button onclick=showHint3() class="hint">Hint 3:</button>
+            <p id="hint3" class="hidden hint">Ross Geller</p>
+        </div>
+    </div>
+    
+<script>
+    function verifyPassword(event) {
+        const pass = "unagi"
+        const inputPass = document.getElementById("pass").value;
+
+        if(pass === inputPass) {
+            alert("BNAVOOOO, Press OK");
+        } else {
+            alert("Tsk Tsk Tsk, Thought u'd know it.");
+            event.preventDefault();
+        }
+    }
+
+    function showHint1() {
+        document.getElementById("hint1").classList.remove("hidden");
+        document.getElementById("hint1").classList.add("visible");
+    }
+    function showHint2() {
+        document.getElementById("hint2").classList.remove("hidden");
+        document.getElementById("hint2").classList.add("visible");
+    }
+    function showHint3() {
+        document.getElementById("hint3").classList.remove("hidden");
+        document.getElementById("hint3").classList.add("visible");
+    }
+
+    document.getElementById("registrationForm").addEventListener("submit", verifyPassword);
+</script>
+</body>
+
+
+</html>
