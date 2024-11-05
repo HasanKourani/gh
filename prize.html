@@ -8,18 +8,25 @@
 </head>
 <body>
     <div class="mystery">
-        <p>There's a mystery word you need to type in here!</p>
-        <p>Get that word correct and send me a screenshot of it</p>
-        <p>And you will get a prize!</p>
-        <p>Plus something you can ask me for</p>
-        <p>ANYTHING U WANT, EVER</p>
-        <p>So 2 prizes actually</p>
-        <p>Now, good luck!</p>
-
+        <div class="exp">
+            <p>There's a mystery word you need to type in here!</p>
+            <p>Get that word correct and send me a screenshot of it</p>
+            <p>And you will get a prize!</p>
+            <p>Plus something you can ask me for</p>
+            <p>ANYTHING U WANT, EVER</p>
+            <p>So 2 prizes actually</p>
+            <p>Now, good luck!</p>
+        </div>
         <form action="" id="mysteryForm">
-            <input type="password" name="mystery" id="mystery" class="pass">
+            <input type="password" name="mystery" id="mystery" class="pass" placeholder="GUESS THE WORD">
             <button type="submit" class="hint">Confirm</button>
         </form>
+        <div class="mysteryHints">
+            <span class="hintBox">
+                <button class="mysBtn">Hint 1:</button>
+                <p class="mysHint">You see me everyday? I'm always watching you! What am I?!</p>
+            </span>
+        </div>
     </div>
 
     <script>
