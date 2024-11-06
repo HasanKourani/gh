@@ -38,11 +38,21 @@ body {
     font-size: 16px;
 }
 
-.page, .mystery {
+.mystery {
     height: 100vh;
     background-color: purple;
     display: flex;
     flex-direction: column;
+    gap: 50px;
+}
+
+.page{
+    height: 100vh;
+    background-color: purple;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 50px;
 }
 
