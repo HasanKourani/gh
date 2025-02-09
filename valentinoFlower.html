@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Valentino</title>
+  </head>
+  <body>
+    <div class="page">
+      <h1>Will You be my valentine?</h1>
+      <div>
+        <a href="valentino.html"><button>Yes</button></a>
+      </div>
+      <span>
+        <button onmouseover="move()" id="press">No</button>
+      </span>
+    </div>
+
+    <script>
+      function move() {
+        const button = document.getElementById("press");
+        const randomTop =
+          Math.floor(Math.random() * window.innerHeight) - button.offsetHeight;
+        const randomLeft =
+          Math.floor(Math.random() * window.innerWidth) - button.offsetWidth;
+
+        button.style.position = "absolute";
+        button.style.top = `${Math.max(randomTop, 0)}px`;
+        button.style.left = `${Math.max(randomLeft, 0)}px`;
+
+        document.getElementById("press").textContent = "NO?!?!?!?!";
+      }
+    </script>
+  </body>
+</html>

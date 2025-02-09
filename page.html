@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Choose</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="page">
-        <h1>Choose</h1>
-        <div>
-            <a href="page1.html"><button>Mercury</button></a>
-            <a href="trip.html"><button>Us</button></a>
-            <a href="quiz.html"><button>A game</button></a>
-            <a href="flower.html"><button>For you</button></a>
-            <a href="prize.html"><button>A mystery</button></a>
-            <a href="danceVideo.html"><button>Don't laugh much!</button></a>
-        </div>
-        <span>
-            <button onmouseover=move() id="press">Press</button>
-        </span>
+      <h1>Choose</h1>
+      <div>
+        <a href="page1.html"><button>Mercury</button></a>
+        <a href="trip.html"><button>Us</button></a>
+        <a href="quiz.html"><button>A game</button></a>
+        <a href="flower.html"><button>For you</button></a>
+        <a href="prize.html"><button>A mystery</button></a>
+        <a href="valentinoFlower.html"><button>Valentinooooo</button></a>
+      </div>
+      <span>
+        <button onmouseover="move()" id="press">Press</button>
+      </span>
     </div>
 
-<script>
-    function move(){
+    <script>
+      function move() {
         const button = document.getElementById("press");
-        const randomTop = Math.floor(Math.random() * window.innerHeight) - button.offsetHeight;
-        const randomLeft = Math.floor(Math.random() * window.innerWidth) - button.offsetWidth;
+        const randomTop =
+          Math.floor(Math.random() * window.innerHeight) - button.offsetHeight;
+        const randomLeft =
+          Math.floor(Math.random() * window.innerWidth) - button.offsetWidth;
 
         button.style.position = "absolute";
         button.style.top = `${Math.max(randomTop, 0)}px`;
         button.style.left = `${Math.max(randomLeft, 0)}px`;
-        
-        document.getElementById("press").textContent = "Press! IF possible hehe";
-    }
-</script>
-</body>
+
+        document.getElementById("press").textContent =
+          "Press! IF possible hehe";
+      }
+    </script>
+  </body>
 </html>
